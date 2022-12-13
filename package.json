@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "yarn workspace tsec build",
+    "test:update-golden": "yarn --silent ts-node test/harness.ts > test/golden.json",
+    "test": "yarn jasmine-ts --config=jasmine.json",
+    "test:coverage": "yarn nyc -e .ts -x \"test/*.ts\" jasmine-ts --config=jasmine.json"
+  }
+}
